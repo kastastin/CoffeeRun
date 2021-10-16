@@ -17,13 +17,13 @@
     CheckList.prototype.addClickHandler = function (fn) {
         this.$element.on('click', 'input', function (event) {
             var email = event.target.value;
-            this.removeRaw(email);
+            this.removeRow(email);
             fn(email);
         }.bind(this));
     };
 
     CheckList.prototype.addRow = function (coffeeOrder) {
-        this.removeRaw(coffeeOrder.emailAddress);
+        this.removeRow(coffeeOrder.emailAddress);
         var rowElement = new Row(coffeeOrder);
         this.$element.append(rowElement.$element);
     };
